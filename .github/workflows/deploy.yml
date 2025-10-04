@@ -32,9 +32,9 @@ jobs:
     - name: Install dependencies
       run: flutter pub get
 
-    # Build the Flutter web app
+    # Build the Flutter web app with the correct base-href for GitHub Pages
     - name: Build Flutter Web App
-      run: flutter build web --release
+      run: flutter build web --release --base-href /tifltails_official/
 
     # Deploy to GitHub Pages
     - name: Deploy to GitHub Pages

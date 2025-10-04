@@ -1,0 +1,45 @@
+name: Deploy to tifltails.com
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+    branches:
+      - main
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Checkout the repository code
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    # Set up Flutter
+    - name: Set up Flutter
+      uses: subosito/flutter-action@v2
+      with:
+        flutter-version: '3.27.3'  # Specify the Flutter version you want
+
+    # Install dependencies
+    - name: Install dependencies
+      run: flutter pub get
+
+    # Build the Flutter web app
+    - name: Build Flutter Web App
+      run: flutter build web --release
+
+    # Deploy to GitHub Pages
+    - name: Deploy to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@v4
+      with:
+        branch: gh-pages  # The branch you want to deploy to
+        folder: build/web  # The folder to deploy (Flutter web build output)
+        token: ${{ secrets.GH_TOKEN }}  # Use the personal access token stored in GitHub secrets

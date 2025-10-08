@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tifltails_official/ui/carousel/carousel_slide_1.dart';
-import 'package:tifltails_official/ui/carousel/carousel_slide_3.dart';
+import 'package:tifltails_official/ui/carousel/carousel_slide_2.dart';
 
 class Carousel extends StatefulWidget {
   static int slideDuration = 6000;

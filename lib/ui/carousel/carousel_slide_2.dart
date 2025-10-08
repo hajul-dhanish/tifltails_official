@@ -1,34 +1,37 @@
 import 'package:flutter/material.dart';
+import 'package:tifltails_official/ui/carousel/carousel_text.dart';
 import 'package:tifltails_official/ui/carousel/model_carousel_item_animation.dart';
 
 import 'animation_slide_up_down_fade.dart';
 
-class CarouselSlide2 extends StatefulWidget {
+class CarouselSlide3 extends StatefulWidget {
   final int slideDuration;
-  final RichText richText;
 
-  const CarouselSlide2({
-    super.key,
-    required this.slideDuration,
-    required this.richText,
-  });
+  const CarouselSlide3({super.key, required this.slideDuration});
 
   @override
-  State<CarouselSlide2> createState() => _CarouselSlide2State();
+  State<CarouselSlide3> createState() => _CarouselSlide3State();
 }
 
-class _CarouselSlide2State extends State<CarouselSlide2>
+class _CarouselSlide3State extends State<CarouselSlide3>
     with SingleTickerProviderStateMixin {
   late Animation<double> animation;
   late AnimationController animationController;
 
   List<SlideItemAnimationModel> slideItems = [
     SlideItemAnimationModel(
-      id: "slide_3-text",
+      id: "slide_4-bg",
       entryDuration: 800,
       exitDuration: 500,
-      entry: 34,
-      exit: 157,
+      entry: 0,
+      exit: 166,
+    ),
+    SlideItemAnimationModel(
+      id: "slide_4-text",
+      entryDuration: 800,
+      exitDuration: 500,
+      entry: 37,
+      exit: 159,
     ),
   ];
   final slideItemOffset = const Offset(0, 60);
@@ -63,6 +66,34 @@ class _CarouselSlide2State extends State<CarouselSlide2>
       child: Stack(
         children: [
           Positioned(
+            left: 345,
+            top: 132,
+            width: 620,
+            height: 345,
+            child: WidgetSlideUpDownFadeAnimation(
+              duration: getSlideItemAnimationDuration("slide_4-bg", slideItems),
+              direction: getSlideItemAnimationVisibility(
+                "slide_4-bg",
+                slideItems,
+              ),
+              offset: slideItemOffset,
+              child: Image.asset(
+                "assets/images/slide_4-bg.jpg",
+                fit: BoxFit.fill,
+              ),
+            ),
+          ),
+          Positioned(
+            left: 441,
+            top: 37,
+            width: 317,
+            height: 565,
+            child: Image.asset(
+              "assets/images/device_frame.png",
+              fit: BoxFit.fill,
+            ),
+          ),
+          Positioned(
             left: 0,
             right: 0,
             top: 0,
@@ -71,15 +102,15 @@ class _CarouselSlide2State extends State<CarouselSlide2>
               alignment: Alignment.center,
               child: WidgetSlideUpDownFadeAnimation(
                 duration: getSlideItemAnimationDuration(
-                  "slide_3-text",
+                  "slide_4-text",
                   slideItems,
                 ),
                 direction: getSlideItemAnimationVisibility(
-                  "slide_3-text",
+                  "slide_4-text",
                   slideItems,
                 ),
                 offset: slideItemOffset,
-                child: widget.richText,
+                child: slide3Text,
               ),
             ),
           ),

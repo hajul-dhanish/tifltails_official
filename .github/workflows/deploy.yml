@@ -34,7 +34,7 @@ jobs:
 
     # Build the Flutter web app with the correct base-href for GitHub Pages
     - name: Build Flutter Web App
-      run: flutter build web --release --base-href /tifltails_official/
+      run: flutter build web --release --base-href /
 
     # Deploy to GitHub Pages
     - name: Deploy to GitHub Pages

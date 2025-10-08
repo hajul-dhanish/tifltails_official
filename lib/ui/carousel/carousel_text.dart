@@ -12,45 +12,6 @@ RichText slide1Text = RichText(
   textAlign: TextAlign.center,
 );
 
-RichText slide2Text = RichText(
-  text: TextSpan(
-    children: <TextSpan>[
-      TextSpan(text: 'We treat your cat like ', style: carouselBlackTextStyle),
-      TextSpan(
-        text: 'Isreal treats Palastine',
-        style: carouselSecondaryTextStyleAlt,
-      ),
-    ],
-  ),
-  textAlign: TextAlign.center,
-);
-
-RichText slideTextAlt2 = RichText(
-  text: TextSpan(
-    children: <TextSpan>[
-      TextSpan(text: 'We treat your dog like ', style: carouselBlackTextStyle),
-      TextSpan(
-        text: 'Modi treats Indians',
-        style: carouselSecondaryTextStyleAlt,
-      ),
-    ],
-  ),
-  textAlign: TextAlign.center,
-);
-
-RichText slideTextAlt3 = RichText(
-  text: TextSpan(
-    children: <TextSpan>[
-      TextSpan(text: 'We treat your parrot like ', style: carouselBlackTextStyle),
-      TextSpan(
-        text: 'Taliban treats Women',
-        style: carouselSecondaryTextStyleAlt,
-      ),
-    ],
-  ),
-  textAlign: TextAlign.center,
-);
-
 RichText slide3Text = RichText(
   text: const TextSpan(
     children: <TextSpan>[

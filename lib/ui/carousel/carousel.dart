@@ -1,29 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:tifltails_official/ui/carousel/carousel_slide_1.dart';
-import 'package:tifltails_official/ui/carousel/carousel_slide_2.dart';
 import 'package:tifltails_official/ui/carousel/carousel_slide_3.dart';
-import 'package:tifltails_official/ui/carousel/carousel_text.dart';
 
 class Carousel extends StatefulWidget {
   static int slideDuration = 6000;
-  static int slideCount = 5;
+  static int slideCount = 2;
   final List<Widget> slides = [
     CarouselSlide1(slideDuration: slideDuration),
-    CarouselSlide2(
-      key: UniqueKey(),
-      slideDuration: slideDuration,
-      richText: slide2Text,
-    ),
-    CarouselSlide2(
-      key: UniqueKey(),
-      slideDuration: slideDuration,
-      richText: slideTextAlt2,
-    ),
-    CarouselSlide2(
-      key: UniqueKey(),
-      slideDuration: slideDuration,
-      richText: slideTextAlt3,
-    ),
     CarouselSlide3(slideDuration: slideDuration),
   ];
 

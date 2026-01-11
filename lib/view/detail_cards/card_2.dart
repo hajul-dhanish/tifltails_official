@@ -107,23 +107,7 @@ class _Card2State extends State<Card2> {
           ResponsiveRowColumnItem(
             rowFlex: 2,
             columnOrder: 1,
-            child: FutureBuilder(
-              future: initializeVideoPlayerFuture,
-              builder: (context, snapshot) {
-                if (snapshot.connectionState == ConnectionState.done) {
-                  // If the VideoPlayerController has finished initialization, use
-                  // the data it provides to limit the aspect ratio of the VideoPlayer.
-                  return AspectRatio(
-                    aspectRatio: videoController.value.aspectRatio,
-                    child: RepaintBoundary(child: VideoPlayer(videoController)),
-                  );
-                } else {
-                  // If the VideoPlayerController is still initializing, show a
-                  // loading spinner.
-                  return Container();
-                }
-              },
-            ),
+            child: Image.asset("assets/images/card_2.png", fit: BoxFit.cover),
           ),
         ],
       ),

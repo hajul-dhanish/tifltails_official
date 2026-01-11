@@ -78,7 +78,7 @@ class _CarouselSlide3State extends State<CarouselSlide3>
               ),
               offset: slideItemOffset,
               child: Image.asset(
-                "assets/images/slide_4-bg.jpg",
+                "assets/images/slide_4-bg.png",
                 fit: BoxFit.fill,
               ),
             ),

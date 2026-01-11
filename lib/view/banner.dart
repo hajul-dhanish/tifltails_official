@@ -42,7 +42,7 @@ class Banner extends StatelessWidget {
                     children: [
                       const TextSpan(
                         text:
-                            "Tifltails: The heart of happy homes and wagging tails. We're on a mission to enhance the lives of pets and their parents, providing a ",
+                            "Tifltails: Where happy homes meet wagging tails. We are on a mission to enhance the lives of pets and their parents, providing a ",
                         style: headlineSecondaryTextStyle,
                       ),
                       TextSpan(
@@ -50,14 +50,14 @@ class Banner extends StatelessWidget {
                           ..onTap = () {
                             openUrl("https://tifltails.com");
                           },
-                        text: "seamless and supportive experience ",
+                        text: "seamless and supportive ecosystem ",
                         style: headlineSecondaryTextStyle.copyWith(
                           color: primary,
                         ),
                       ),
                       const TextSpan(
                         text:
-                            "for every stage of your pet's journey. Dive into a world where pet ",
+                            "for every stage of your pet's journey. Dive into a world where ",
                         style: headlineSecondaryTextStyle,
                       ),
                       TextSpan(
@@ -65,14 +65,14 @@ class Banner extends StatelessWidget {
                           ..onTap = () {
                             openUrl("https://tifltails.com");
                           },
-                        text: "well-being ",
+                        text: "pet well-being ",
                         style: headlineSecondaryTextStyle.copyWith(
                           color: primary,
                         ),
                       ),
                       const TextSpan(
                         text:
-                            "comes first, and every 'tifl' finds its perfect fit.",
+                            "is our top priority, and every furry friend finds their perfect fit.",
                         style: headlineSecondaryTextStyle,
                       ),
                     ],

@@ -59,7 +59,7 @@ class Footer extends StatelessWidget {
                           ..onTap = () {
                             openUrl("https://tifltails.com/");
                           },
-                        text: "terms",
+                        text: "Terms of Service",
                       ),
                       const TextSpan(text: "  •  "),
                       TextSpan(
@@ -67,31 +67,7 @@ class Footer extends StatelessWidget {
                           ..onTap = () {
                             openUrl("https://tifltails.com/");
                           },
-                        text: "security",
-                      ),
-                      const TextSpan(text: "  •  "),
-                      TextSpan(
-                        recognizer: TapGestureRecognizer()
-                          ..onTap = () {
-                            openUrl("https://tifltails.com/");
-                          },
-                        text: "privacy",
-                      ),
-                      const TextSpan(text: "  •  "),
-                      TextSpan(
-                        recognizer: TapGestureRecognizer()
-                          ..onTap = () {
-                            openUrl("https://tifltails.com/");
-                          },
-                        text: "español",
-                      ),
-                      const TextSpan(text: "  •  "),
-                      TextSpan(
-                        recognizer: TapGestureRecognizer()
-                          ..onTap = () {
-                            openUrl("https://tifltails.com/");
-                          },
-                        text: "社区中文资源",
+                        text: "Privacy Policy",
                       ),
                     ],
                   ),
@@ -108,7 +84,7 @@ class Footer extends StatelessWidget {
                       const TextSpan(text: '\n'),
                       TextSpan(
                         text:
-                            "Except as otherwise noted, this work is licensed under a Creative Commons Attribution 4.0 International License, and code samples are licensed under the BSD License.",
+                            "© 2026 Tifltails. All rights reserved. Dedicated to the well-being of pets and their parents across the globe.",
                         style: bodyTextStyle.copyWith(
                           fontSize: 10,
                           color: Colors.white,

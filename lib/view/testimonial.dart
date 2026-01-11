@@ -48,7 +48,7 @@ class Testimonial extends StatelessWidget {
                       children: [
                         const TextSpan(
                           text:
-                              "Organizations around the india are use tifltails for various services.",
+                              "Thousands of pet owners and animal welfare organizations across India trust Tifltails for premium care and support.",
                         ),
                         const TextSpan(text: "\n\n"),
                         TextSpan(

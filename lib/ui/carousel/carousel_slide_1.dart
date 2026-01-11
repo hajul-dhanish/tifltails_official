@@ -69,20 +69,20 @@ class _CarouselSlide1State extends State<CarouselSlide1>
                 text: TextSpan(
                   children: [
                     TextSpan(
-                      text: "for all our ",
+                      text: "for all your ",
                       style: carouselBlackTextStyle,
                     ),
-                    TextSpan(text: "tifl", style: carouselSecondaryTextStyleAlt),
                     TextSpan(
-                      text: " needs!",
-                      style: carouselBlackTextStyle,
+                      text: "tifl",
+                      style: carouselSecondaryTextStyleAlt,
                     ),
+                    TextSpan(text: " needs!", style: carouselBlackTextStyle),
                   ],
                 ),
               ),
               SizedBox(height: 6),
               Text(
-                "Help us making this world a better place for pets.",
+                "Ensuring every pet lives a happy, healthy, and loved life.",
                 style: carouselSecondaryTextStyle,
               ),
             ],

@@ -22,7 +22,7 @@ class NewsBar extends StatelessWidget {
             rowFlex: 1,
             rowFit: FlexFit.tight,
             child: NewsCard(
-              title: "Announcing Tifltail's Donation",
+              title: "Tifltails Donation: Supporting Shelters Nationwide",
               imagePath: "assets/images/donation_announcement.png",
               linkUrl: "https://tifltails.com/",
             ),
@@ -31,7 +31,7 @@ class NewsBar extends StatelessWidget {
             rowFlex: 1,
             rowFit: FlexFit.tight,
             child: NewsCard(
-              title: "Adoption is now affiliate Tifltails",
+              title: "Tifltails Adoption Drive: Find Your New Best Friend",
               imagePath: "assets/images/pet_adoption_news.png",
               linkUrl: "https://tifltails.com/",
             ),

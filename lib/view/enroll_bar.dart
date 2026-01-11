@@ -31,7 +31,7 @@ class EnrollBar extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(bottom: 16),
                 child: Text(
-                  "It’s free and powerfull",
+                  "Join our growing community of pet lovers.",
                   style: bodyTextStyle.copyWith(fontSize: 24),
                 ),
               ),

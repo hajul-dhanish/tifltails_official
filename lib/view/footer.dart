@@ -65,7 +65,7 @@ class Footer extends StatelessWidget {
                       TextSpan(
                         recognizer: TapGestureRecognizer()
                           ..onTap = () {
-                            openUrl("https://tifltails.com/");
+                            Navigator.of(context).pushNamed('/privacy-policy');
                           },
                         text: "Privacy Policy",
                       ),

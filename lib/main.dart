@@ -15,7 +15,11 @@ import 'package:tifltails_official/view/news_bar.dart';
 import 'package:tifltails_official/view/testimonial.dart';
 
 
+import 'package:flutter_web_plugins/url_strategy.dart';
+import 'package:tifltails_official/view/privacy_policy_page.dart';
+
 void main() {
+  usePathUrlStrategy();
   runApp(const MyApp());
 }
 
@@ -47,20 +51,48 @@ class MyApp extends StatelessWidget {
           const Breakpoint(start: 1081, end: double.infinity, name: DESKTOP),
         ],
       ),
-      home: Scaffold(
-        backgroundColor: background,
-        appBar: const PreferredSize(
-          preferredSize: Size(double.infinity, 66),
-          child: Header(),
-        ),
-        body: ListView.builder(
-          itemCount: blocks.length,
-          itemBuilder: (context, index) {
-            return blocks[index];
-          },
-        ),
-      ),
+      onGenerateRoute: (settings) {
+        final name = settings.name ?? '';
+        final uri = Uri.tryParse(name);
+        final path = uri?.path ?? name;
+        if (path == '/privacy-policy' ||
+            path == '/privacy_policy' ||
+            path == 'privacy-policy' ||
+            path == 'privacy_policy' ||
+            path.endsWith('/privacy-policy') ||
+            path.endsWith('/privacy_policy')) {
+          return MaterialPageRoute(
+            builder: (context) => const PrivacyPolicyPage(),
+            settings: settings,
+          );
+        }
+        return MaterialPageRoute(
+          builder: (context) => const HomeScreen(),
+          settings: settings,
+        );
+      },
       debugShowCheckedModeBanner: false,
+    );
+  }
+}
+
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: background,
+      appBar: const PreferredSize(
+        preferredSize: Size(double.infinity, 66),
+        child: Header(),
+      ),
+      body: ListView.builder(
+        itemCount: blocks.length,
+        itemBuilder: (context, index) {
+          return blocks[index];
+        },
+      ),
     );
   }
 }

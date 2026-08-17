@@ -29,21 +29,31 @@ class Header extends StatelessWidget {
           MouseRegion(
             cursor: SystemMouseCursors.click,
             child: GestureDetector(
-              onTap: () =>
-                  Navigator.of(context).popUntil((route) => route.isFirst),
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(0, 0, 4, 0),
-                child: Image.asset(
-                  "assets/images/logo.png",
-                  height: 60,
-                  fit: BoxFit.contain,
-                ),
+              onTap: () {
+                if (Navigator.of(context).canPop()) {
+                  Navigator.of(context).popUntil((route) => route.isFirst);
+                } else {
+                  Navigator.of(context).pushReplacementNamed('/');
+                }
+              },
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 0, 4, 0),
+                    child: Image.asset(
+                      "assets/images/logo.png",
+                      height: 60,
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                  Text(
+                    "Tifltails",
+                    style: GoogleFonts.playfairDisplay(fontSize: 18),
+                  ),
+                ],
               ),
             ),
-          ),
-           Text(
-            "Tifltails",
-            style: GoogleFonts.playfairDisplay(fontSize: 18),
           ),
           const Spacer(),
           ResponsiveVisibility(
@@ -99,6 +109,27 @@ class Header extends StatelessWidget {
                   padding: EdgeInsets.symmetric(horizontal: 16),
                   child: Text(
                     "Contact us",
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: navLinkColor,
+                      fontFamily: fontFamily,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          ResponsiveVisibility(
+            visible: false,
+            visibleConditions: const [Condition.largerThan(name: MOBILE)],
+            child: MouseRegion(
+              cursor: SystemMouseCursors.click,
+              child: GestureDetector(
+                onTap: () => Navigator.of(context).pushNamed('/privacy-policy'),
+                child: const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 16),
+                  child: Text(
+                    "Privacy Policy",
                     style: TextStyle(
                       fontSize: 16,
                       color: navLinkColor,
@@ -251,6 +282,102 @@ class Header extends StatelessWidget {
                   ),
                 ),
               ),
+            ),
+          ),
+          ResponsiveVisibility(
+            visible: false,
+            visibleConditions: const [
+              Condition.equals(name: 'MOBILE_SMALL'),
+              Condition.equals(name: MOBILE),
+            ],
+            child: PopupMenuButton<String>(
+              icon: const Icon(Icons.menu, color: navLinkColor),
+              tooltip: "Navigation Menu",
+              onSelected: (value) {
+                if (value == '/privacy-policy') {
+                  Navigator.of(context).pushNamed('/privacy-policy');
+                } else if (value == '/') {
+                  if (Navigator.of(context).canPop()) {
+                    Navigator.of(context).popUntil((route) => route.isFirst);
+                  } else {
+                    Navigator.of(context).pushReplacementNamed('/');
+                  }
+                } else {
+                  openUrl("https://tifltails.com");
+                }
+              },
+              itemBuilder: (context) => [
+                const PopupMenuItem(
+                  value: '/',
+                  child: Row(
+                    children: [
+                      Icon(Icons.home_outlined, size: 18, color: navLinkColor),
+                      SizedBox(width: 10),
+                      Text("Home"),
+                    ],
+                  ),
+                ),
+                const PopupMenuItem(
+                  value: 'service',
+                  child: Row(
+                    children: [
+                      Icon(Icons.pets_outlined, size: 18, color: navLinkColor),
+                      SizedBox(width: 10),
+                      Text("Our Service"),
+                    ],
+                  ),
+                ),
+                const PopupMenuItem(
+                  value: 'about',
+                  child: Row(
+                    children: [
+                      Icon(Icons.info_outline, size: 18, color: navLinkColor),
+                      SizedBox(width: 10),
+                      Text("About us"),
+                    ],
+                  ),
+                ),
+                const PopupMenuItem(
+                  value: 'contact',
+                  child: Row(
+                    children: [
+                      Icon(Icons.mail_outline, size: 18, color: navLinkColor),
+                      SizedBox(width: 10),
+                      Text("Contact us"),
+                    ],
+                  ),
+                ),
+                const PopupMenuItem(
+                  value: '/privacy-policy',
+                  child: Row(
+                    children: [
+                      Icon(Icons.shield_outlined, size: 18, color: primary),
+                      SizedBox(width: 10),
+                      Text("Privacy Policy", style: TextStyle(fontWeight: FontWeight.w600, color: primary)),
+                    ],
+                  ),
+                ),
+                const PopupMenuItem(
+                  value: 'join',
+                  child: Row(
+                    children: [
+                      Icon(Icons.group_add_outlined, size: 18, color: navLinkColor),
+                      SizedBox(width: 10),
+                      Text("Join us"),
+                    ],
+                  ),
+                ),
+                const PopupMenuItem(
+                  value: 'donate',
+                  child: Row(
+                    children: [
+                      Icon(Icons.volunteer_activism_outlined, size: 18, color: primary),
+                      SizedBox(width: 10),
+                      Text("Donate", style: TextStyle(color: primary, fontWeight: FontWeight.bold)),
+                    ],
+                  ),
+                ),
+              ],
             ),
           ),
         ],

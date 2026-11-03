@@ -40,11 +40,15 @@ class Header extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(0, 0, 4, 0),
-                    child: Image.asset(
-                      "assets/images/logo.png",
-                      height: 60,
-                      fit: BoxFit.contain,
+                    padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(6),
+                      child: Image.asset(
+                        "assets/images/logo.png",
+                        height: 40,
+                        width: 40,
+                        fit: BoxFit.contain,
+                      ),
                     ),
                   ),
                   Text(
@@ -104,7 +108,7 @@ class Header extends StatelessWidget {
             child: MouseRegion(
               cursor: SystemMouseCursors.click,
               child: GestureDetector(
-                onTap: () => openUrl("https://tifltails.com"),
+                onTap: () => openUrl("mailto:support@tifltails.com"),
                 child: const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 16),
                   child: Text(
@@ -296,6 +300,8 @@ class Header extends StatelessWidget {
               onSelected: (value) {
                 if (value == '/privacy-policy') {
                   Navigator.of(context).pushNamed('/privacy-policy');
+                } else if (value == 'contact') {
+                  openUrl("mailto:support@tifltails.com");
                 } else if (value == '/') {
                   if (Navigator.of(context).canPop()) {
                     Navigator.of(context).popUntil((route) => route.isFirst);

@@ -566,7 +566,7 @@ class _PrivacyPolicyPageState extends State<PrivacyPolicyPage> {
                 ),
                 const SizedBox(height: 6),
                 Text(
-                  "For data requests or inquiries, reach us at privacy@tifltails.com",
+                  "For support, inquiries, or data requests, reach us at support@tifltails.com or privacy@tifltails.com",
                   style: GoogleFonts.inter(
                     fontSize: 11,
                     color: const Color(0xFF64748B),
@@ -577,9 +577,9 @@ class _PrivacyPolicyPageState extends State<PrivacyPolicyPage> {
                 MouseRegion(
                   cursor: SystemMouseCursors.click,
                   child: GestureDetector(
-                    onTap: () => openUrl("mailto:privacy@tifltails.com"),
+                    onTap: () => openUrl("mailto:support@tifltails.com"),
                     child: Text(
-                      "Contact Privacy Team →",
+                      "Contact Support: support@tifltails.com →",
                       style: GoogleFonts.inter(
                         fontSize: 12,
                         fontWeight: FontWeight.w600,

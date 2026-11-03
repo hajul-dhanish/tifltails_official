@@ -23,11 +23,14 @@ class Footer extends StatelessWidget {
           ResponsiveRowColumnItem(
             child: Padding(
               padding: const EdgeInsets.fromLTRB(0, 20, 20, 20),
-              child: Image.asset(
-                "assets/images/logo.png",
-                height: 100,
-                color: Colors.white,
-                fit: BoxFit.contain,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(8),
+                child: Image.asset(
+                  "assets/images/logo.png",
+                  height: 60,
+                  width: 60,
+                  fit: BoxFit.contain,
+                ),
               ),
             ),
           ),
@@ -49,9 +52,9 @@ class Footer extends StatelessWidget {
                       TextSpan(
                         recognizer: TapGestureRecognizer()
                           ..onTap = () {
-                            openUrl("https://tifltails.com/");
+                            openUrl("mailto:support@tifltails.com");
                           },
-                        text: "tifl-tails@",
+                        text: "support@tifltails.com",
                       ),
                       const TextSpan(text: "  •  "),
                       TextSpan(

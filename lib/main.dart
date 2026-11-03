@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:tifltails_official/components/colors.dart';
 import 'package:tifltails_official/utils/utils.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
+import 'package:tifltails_official/view/privacy_policy_page.dart';
 
 void main() {
   usePathUrlStrategy();
@@ -21,7 +22,11 @@ class MyApp extends StatelessWidget {
         fontFamily: GoogleFonts.inter().fontFamily,
         colorScheme: ColorScheme.fromSeed(seedColor: primary),
       ),
-      home: const HomePage(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const HomePage(),
+        '/privacy-policy': (context) => const PrivacyPolicyPage(),
+      },
     );
   }
 }
@@ -64,8 +69,16 @@ class _NavBar extends StatelessWidget {
       child: Row(
         children: [
           // Logo + wordmark
-          Image.asset('assets/images/logo.png', height: 44, fit: BoxFit.contain),
-          const SizedBox(width: 8),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(8),
+            child: Image.asset(
+              'assets/images/logo.png',
+              height: 40,
+              width: 40,
+              fit: BoxFit.contain,
+            ),
+          ),
+          const SizedBox(width: 10),
           Text(
             'TiflTails',
             style: GoogleFonts.playfairDisplay(
@@ -75,6 +88,24 @@ class _NavBar extends StatelessWidget {
             ),
           ),
           const Spacer(),
+          MouseRegion(
+            cursor: SystemMouseCursors.click,
+            child: GestureDetector(
+              onTap: () => openUrl('mailto:support@tifltails.com'),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                child: Text(
+                  'Contact',
+                  style: GoogleFonts.inter(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500,
+                    color: const Color(0xFF4A4A4A),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          const SizedBox(width: 8),
           // CTA
           _PrimaryButton(
             label: 'Download App',
@@ -158,8 +189,8 @@ class _HeroDesktop extends StatelessWidget {
                   ),
                   const SizedBox(width: 16),
                   _GhostButton(
-                    label: 'Learn More',
-                    onTap: () => openUrl('https://tifltails.com'),
+                    label: 'Contact Us',
+                    onTap: () => openUrl('mailto:support@tifltails.com'),
                   ),
                 ],
               ),
@@ -220,6 +251,11 @@ class _HeroMobile extends StatelessWidget {
           label: 'Get Started',
           onTap: () => openUrl('https://tifltails.com'),
           fullWidth: true,
+        ),
+        const SizedBox(height: 12),
+        _GhostButton(
+          label: 'Contact Support',
+          onTap: () => openUrl('mailto:support@tifltails.com'),
         ),
       ],
     );
@@ -410,8 +446,15 @@ class _Footer extends StatelessWidget {
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Image.asset('assets/images/logo.png',
-            height: 32, color: Colors.white, fit: BoxFit.contain),
+        ClipRRect(
+          borderRadius: BorderRadius.circular(6),
+          child: Image.asset(
+            'assets/images/logo.png',
+            height: 32,
+            width: 32,
+            fit: BoxFit.contain,
+          ),
+        ),
         const SizedBox(width: 8),
         Text(
           'TiflTails',
@@ -426,12 +469,20 @@ class _Footer extends StatelessWidget {
   }
 
   Widget _footerLinks(BuildContext context) {
-    return Row(
-      mainAxisSize: MainAxisSize.min,
+    return Wrap(
+      spacing: 20,
+      runSpacing: 8,
+      alignment: WrapAlignment.center,
+      crossAxisAlignment: WrapCrossAlignment.center,
       children: [
-        _FooterLink(label: 'Privacy Policy', onTap: () => openUrl('https://tifltails.com/privacy-policy')),
-        const SizedBox(width: 20),
-        _FooterLink(label: 'Contact', onTap: () => openUrl('mailto:hello@tifltails.com')),
+        _FooterLink(
+          label: 'Privacy Policy',
+          onTap: () => openUrl('https://tifltails.com/privacy-policy'),
+        ),
+        _FooterLink(
+          label: 'support@tifltails.com',
+          onTap: () => openUrl('mailto:support@tifltails.com'),
+        ),
       ],
     );
   }

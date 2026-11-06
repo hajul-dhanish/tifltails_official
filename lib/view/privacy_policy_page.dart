@@ -1,3 +1,4 @@
+import 'package:tifltails_official/components/glass.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
@@ -94,59 +95,53 @@ class _PrivacyPolicyPageState extends State<PrivacyPolicyPage> {
         preferredSize: Size(double.infinity, 66),
         child: Header(),
       ),
-      body: SingleChildScrollView(
-        controller: _scrollController,
-        child: Column(
-          children: [
-            // Top Hero / Header Banner
-            _buildHeroHeader(context, isMobile),
-
-            // Content Area
-            Container(
-              constraints: const BoxConstraints(maxWidth: 1200),
-              padding: EdgeInsets.symmetric(
-                horizontal: isMobile ? 16 : 32,
-                vertical: isMobile ? 24 : 40,
-              ),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
+      body: Stack(
+        children: [
+          const Positioned.fill(child: GlassBackdrop()),
+          BackdropGroup(
+            child: SingleChildScrollView(
+              controller: _scrollController,
+              child: Column(
                 children: [
-                  // Main Policy Content
-                  Expanded(
-                    child: Container(
-                      padding: EdgeInsets.all(isMobile ? 20 : 40),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(16),
-                        border: Border.all(color: const Color(0xFFEBECEF)),
-                        boxShadow: const [
-                          BoxShadow(
-                            color: Color(0x0A000000),
-                            blurRadius: 20,
-                            offset: Offset(0, 4),
+                  // Top Hero / Header Banner
+                  _buildHeroHeader(context, isMobile),
+
+                  // Content Area
+                  Container(
+                    constraints: const BoxConstraints(maxWidth: 1200),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: isMobile ? 16 : 32,
+                      vertical: isMobile ? 24 : 40,
+                    ),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        // Main Policy Content
+                        Expanded(
+                          child: GlassPanel(
+                            padding: EdgeInsets.all(isMobile ? 20 : 40),
+                            borderRadius: BorderRadius.circular(20),
+                            opacity: 0.62,
+                            child: _buildBodyContent(context, isMobile),
                           ),
+                        ),
+
+                        // Desktop Side Navigation Card
+                        if (!isMobile) ...[
+                          const SizedBox(width: 32),
+                          SizedBox(width: 280, child: _buildSideNav(context)),
                         ],
-                      ),
-                      child: _buildBodyContent(context, isMobile),
+                      ],
                     ),
                   ),
 
-                  // Desktop Side Navigation Card
-                  if (!isMobile) ...[
-                    const SizedBox(width: 32),
-                    SizedBox(
-                      width: 280,
-                      child: _buildSideNav(context),
-                    ),
-                  ],
+                  // Footer
+                  const Footer(),
                 ],
               ),
             ),
-
-            // Footer
-            const Footer(),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
@@ -156,10 +151,7 @@ class _PrivacyPolicyPageState extends State<PrivacyPolicyPage> {
       width: double.infinity,
       decoration: const BoxDecoration(
         gradient: LinearGradient(
-          colors: [
-            Color(0xFF2C3E50),
-            Color(0xFF34495E),
-          ],
+          colors: [Color(0xFF2C3E50), Color(0xFF34495E)],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
@@ -189,7 +181,11 @@ class _PrivacyPolicyPageState extends State<PrivacyPolicyPage> {
                       },
                       child: Row(
                         children: [
-                          const Icon(Icons.arrow_back, color: Colors.white70, size: 16),
+                          const Icon(
+                            Icons.arrow_back,
+                            color: Colors.white70,
+                            size: 16,
+                          ),
                           const SizedBox(width: 6),
                           Text(
                             "Home",
@@ -205,7 +201,10 @@ class _PrivacyPolicyPageState extends State<PrivacyPolicyPage> {
                   ),
                   const Padding(
                     padding: EdgeInsets.symmetric(horizontal: 8),
-                    child: Text("/", style: TextStyle(color: Colors.white38, fontSize: 14)),
+                    child: Text(
+                      "/",
+                      style: TextStyle(color: Colors.white38, fontSize: 14),
+                    ),
                   ),
                   Text(
                     "Privacy Policy",
@@ -357,11 +356,19 @@ class _PrivacyPolicyPageState extends State<PrivacyPolicyPage> {
               ElevatedButton.icon(
                 onPressed: _loadPrivacyPolicy,
                 icon: const Icon(Icons.refresh, color: Colors.white),
-                label: const Text("Retry", style: TextStyle(color: Colors.white)),
+                label: const Text(
+                  "Retry",
+                  style: TextStyle(color: Colors.white),
+                ),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: primary,
-                  padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 24,
+                    vertical: 12,
+                  ),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8),
+                  ),
                 ),
               ),
             ],
@@ -436,15 +443,13 @@ class _PrivacyPolicyPageState extends State<PrivacyPolicyPage> {
           borderRadius: BorderRadius.circular(6),
         ),
         tableHeadAlign: TextAlign.left,
-        tableCellsPadding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+        tableCellsPadding: const EdgeInsets.symmetric(
+          horizontal: 14,
+          vertical: 10,
+        ),
         tableColumnWidth: const FlexColumnWidth(),
         horizontalRuleDecoration: const BoxDecoration(
-          border: Border(
-            top: BorderSide(
-              color: Color(0xFFE2E8F0),
-              width: 1,
-            ),
-          ),
+          border: Border(top: BorderSide(color: Color(0xFFE2E8F0), width: 1)),
         ),
         blockquote: GoogleFonts.inter(
           fontSize: 14,
@@ -453,11 +458,9 @@ class _PrivacyPolicyPageState extends State<PrivacyPolicyPage> {
           height: 1.6,
         ),
         blockquoteDecoration: BoxDecoration(
-          color: const Color(0xFFF8FAFC),
+          color: Colors.white.withValues(alpha: 0.55),
           borderRadius: BorderRadius.circular(8),
-          border: const Border(
-            left: BorderSide(color: primary, width: 4),
-          ),
+          border: const Border(left: BorderSide(color: primary, width: 4)),
         ),
         blockquotePadding: const EdgeInsets.all(16),
         code: GoogleFonts.jetBrainsMono(
@@ -475,20 +478,10 @@ class _PrivacyPolicyPageState extends State<PrivacyPolicyPage> {
   }
 
   Widget _buildSideNav(BuildContext context) {
-    return Container(
+    return GlassPanel(
       padding: const EdgeInsets.all(20),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: const Color(0xFFEBECEF)),
-        boxShadow: const [
-          BoxShadow(
-            color: Color(0x06000000),
-            blurRadius: 16,
-            offset: Offset(0, 4),
-          ),
-        ],
-      ),
+      borderRadius: BorderRadius.circular(20),
+      opacity: 0.55,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -542,17 +535,22 @@ class _PrivacyPolicyPageState extends State<PrivacyPolicyPage> {
           // Help / Inquiries box
           Container(
             padding: const EdgeInsets.all(14),
-            decoration: BoxDecoration(
-              color: primaryLight.withValues(alpha: 0.6),
-              borderRadius: BorderRadius.circular(10),
-              border: Border.all(color: primary.withValues(alpha: 0.2)),
+            decoration: glassTintDecoration(
+              primaryLight,
+              radius: 12,
+              opacity: 0.6,
+              shadow: false,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
                   children: [
-                    const Icon(Icons.mail_outline, size: 16, color: primaryDark),
+                    const Icon(
+                      Icons.mail_outline,
+                      size: 16,
+                      color: primaryDark,
+                    ),
                     const SizedBox(width: 6),
                     Text(
                       "Need Assistance?",

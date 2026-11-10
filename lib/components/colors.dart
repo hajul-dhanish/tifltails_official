@@ -13,13 +13,13 @@ const Color onPrimaryFixedVariant = Color(0xFF822611);
 
 // Surfaces
 const Color surfaceContainer = Color(0XFF81B389);
-const Color surface = Color(0xFFFFF8F6); // Warm soft cream
+const Color surface = Color(0xFFFFFFFF); // White
 const Color surfaceContainerLowest = Color(0xFFFFFFFF);
 const Color surfaceContainerLow = Color(0xFFFFF1ED);
 //Color(0xFFFFE9E4);
 const Color surfaceContainerHigh = Color(0xFFF9E4DE);
 const Color surfaceContainerHighest = Color(0xFFF3DED9);
-const Color surfaceDim = Color(0xFFEAD6D0);
+const Color surfaceDim = Color.fromARGB(255, 255, 255, 255);
 
 // Text & Outline
 const Color onSurface = Color(0xFF241916); // Deep charcoal
@@ -52,7 +52,7 @@ const Color textPrimary = Color(0xFF241916);
 const Color buttonPrimaryDark = Color(0xFF822611);
 const Color buttonPrimaryDarkPressed = Color(0xFF5A1404);
 const Color buttonPrimaryPressedOutline = Color(0xFFFFDAD2);
-const Color background = Color(0xFFFFF8F6);
+const Color background = Color(0xFFFFFFFF); // White
 const Color backgroundDark = Color(0xFF201412);
 const Color border = Color(0x20000000);
 const Color navLinkColor = Color(0xFF57423D);

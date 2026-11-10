@@ -97,7 +97,6 @@ class _PrivacyPolicyPageState extends State<PrivacyPolicyPage> {
       ),
       body: Stack(
         children: [
-          const Positioned.fill(child: GlassBackdrop()),
           BackdropGroup(
             child: SingleChildScrollView(
               controller: _scrollController,

@@ -49,7 +49,7 @@ class _GlassNavLinkState extends State<GlassNavLink> {
           button: true,
           label: widget.label,
           child: AnimatedScale(
-            scale: _pressed ? 0.95 : 1,
+            scale: _pressed ? 0.75 : 1,
             duration: const Duration(milliseconds: 120),
             curve: _curve,
             child: AnimatedContainer(
@@ -59,30 +59,9 @@ class _GlassNavLinkState extends State<GlassNavLink> {
               padding: const EdgeInsets.fromLTRB(14, 8, 14, 6),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(999),
-                gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: [
-                    Colors.white.withValues(
-                      alpha: _pressed ? 0.38 : (active ? 0.28 : 0),
-                    ),
-                    Colors.white.withValues(
-                      alpha: _pressed ? 0.22 : (active ? 0.12 : 0),
-                    ),
-                  ],
-                ),
                 border: Border.all(
-                  color: Colors.white.withValues(alpha: active ? 0.55 : 0),
+                  color: Colors.black.withValues(alpha: active ? 0.55 : 0),
                 ),
-                boxShadow: [
-                  BoxShadow(
-                    color: const Color(0xFF7A2E1C).withValues(
-                      alpha: active ? 0.18 : 0,
-                    ),
-                    blurRadius: 12,
-                    offset: const Offset(0, 4),
-                  ),
-                ],
               ),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
@@ -96,7 +75,7 @@ class _GlassNavLinkState extends State<GlassNavLink> {
                       style: GoogleFonts.plusJakartaSans(
                         fontSize: 14,
                         fontWeight: FontWeight.w700,
-                        color: Colors.white,
+                        color: Colors.black,
                         shadows: active
                             ? const [
                                 Shadow(
@@ -117,7 +96,7 @@ class _GlassNavLinkState extends State<GlassNavLink> {
                     height: 2,
                     width: active ? 18 : 0,
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: Colors.black,
                       borderRadius: BorderRadius.circular(2),
                     ),
                   ),

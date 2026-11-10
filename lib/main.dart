@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         useMaterial3: true,
-        scaffoldBackgroundColor: surface,
+        scaffoldBackgroundColor: Colors.white,
         fontFamily: GoogleFonts.plusJakartaSans().fontFamily,
         colorScheme: const ColorScheme.light(
           primary: primary,
@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
           primaryContainer: primaryContainer,
           secondary: secondary,
           onSecondary: onSecondary,
-          surface: surface,
+          surface: Colors.white,
           onSurface: onSurface,
           onSurfaceVariant: onSurfaceVariant,
           outline: outline,
@@ -112,12 +112,9 @@ class _HomePageState extends State<HomePage> {
     final isMobile = width < 900;
 
     return Scaffold(
-      backgroundColor: surface,
+      backgroundColor: Colors.white,
       body: Stack(
         children: [
-          // Ambient colour field the glass panels refract
-          const Positioned.fill(child: GlassBackdrop()),
-
           // Main Scrollable Content
           BackdropGroup(
             child: SingleChildScrollView(
@@ -178,7 +175,7 @@ class _HomePageState extends State<HomePage> {
   Widget _buildHeaderNavBar(bool isMobile) {
     // Floating liquid-glass capsule (12px top inset + 64px bar = the 76px
     // spacer at the top of the page).
-    return LiquidGlassBar(child: _buildHeaderContent(isMobile), tint: primary);
+    return LiquidGlassBar(tint: white, child: _buildHeaderContent(isMobile));
   }
 
   Widget _buildHeaderContent(bool isMobile) {
@@ -205,10 +202,9 @@ class _HomePageState extends State<HomePage> {
                       height: 120,
                       width: 70,
                       fit: BoxFit.contain,
-                      color: white,
                     ),
                   ),
-                  const SizedBox(width: 0),
+                  const SizedBox(width: 10),
                   Column(
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -218,7 +214,7 @@ class _HomePageState extends State<HomePage> {
                         style: GoogleFonts.plusJakartaSans(
                           fontSize: 14,
                           fontWeight: FontWeight.w800,
-                          color: white,
+                          color: black,
                           // letterSpacing: 0.8,
                         ),
                       ),
@@ -230,7 +226,7 @@ class _HomePageState extends State<HomePage> {
           ),
 
           SizedBox(width: 16),
-          Container(color: white.withValues(alpha: 0.6), height: 20, width: 1),
+          Container(color: black.withValues(alpha: 0.6), height: 20, width: 1),
 
           // const Spacer(),
           // Desktop Navigation Links
@@ -466,6 +462,7 @@ class _HomePageState extends State<HomePage> {
                     children: [
                       SizedBox(
                         width: cardWidth,
+                        height: 400,
                         child: _featureCard(
                           pillar: 'PILLAR 01',
                           title: 'Pet Adoption',
@@ -480,6 +477,8 @@ class _HomePageState extends State<HomePage> {
                       ),
                       SizedBox(
                         width: cardWidth,
+                        height: 400,
+
                         child: _featureCard(
                           pillar: 'PILLAR 02',
                           title: 'Pet Matchmaking',
@@ -498,23 +497,30 @@ class _HomePageState extends State<HomePage> {
                       ),
                       SizedBox(
                         width: cardWidth,
+                        height: 400,
+
                         child: _featureCard(
                           pillar: 'PILLAR 03',
-                          title: 'NGO Aid & Giving',
+                          title: 'Health & Reminders',
                           desc:
-                              'Transparent direct micro-donations to vetted animal welfare organizations. Fund emergency vet clinics, feeding runs, and track photo receipts with zero platform commissions.',
+                              'Never miss a step in their healthcare journey, Stay ahead of your pet\'s health with timely vaccination and deworming reminders. Keep track of upcoming schedules and due dates.',
                           tags: [
-                            '100% Passed On',
-                            'Audit Logs',
-                            'Emergency Feeds',
+                            'Vaccine Reminders',
+                            'Deworming Alerts',
+                            'Health Schedules',
                           ],
-                          icon: Icons.handshake_rounded,
+                          icon: Icons.schedule,
                           iconBg: tertiaryFixed,
                           iconColor: tertiaryContainer,
                           pillarColor: tertiaryContainer,
                         ),
                       ),
-                      SizedBox(width: cardWidth, child: _roadmapCard()),
+                      SizedBox(
+                        width: cardWidth,
+                        height: 400,
+
+                        child: _roadmapCard(),
+                      ),
                     ],
                   );
                 },
@@ -537,6 +543,7 @@ class _HomePageState extends State<HomePage> {
     required Color pillarColor,
   }) {
     return GlassPanel(
+      tint: surfaceDim,
       padding: const EdgeInsets.all(24),
       borderRadius: BorderRadius.circular(20),
       child: Column(
@@ -701,6 +708,7 @@ class _HomePageState extends State<HomePage> {
       ),
       child: Center(
         child: GlassPanel(
+          tint: surfaceDim,
           constraints: const BoxConstraints(maxWidth: 1200),
           padding: EdgeInsets.all(isMobile ? 20 : 36),
           borderRadius: BorderRadius.circular(28),
@@ -1088,46 +1096,6 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
-            MouseRegion(
-              cursor: SystemMouseCursors.click,
-              child: GestureDetector(
-                onTap: () {
-                  setState(() {
-                    _activeShopView = 'back';
-                  });
-                },
-                child: Container(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 20,
-                    vertical: 13,
-                  ),
-                  decoration: glassDecoration(
-                    radius: 24,
-                    opacity: 0.6,
-                    shadow: true,
-                  ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      const Icon(
-                        Icons.menu_book_rounded,
-                        size: 16,
-                        color: primary,
-                      ),
-                      const SizedBox(width: 8),
-                      Text(
-                        'View Feeding Guide',
-                        style: GoogleFonts.plusJakartaSans(
-                          fontSize: 13,
-                          fontWeight: FontWeight.w600,
-                          color: onSurface,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
           ],
         ),
       ],
@@ -1367,6 +1335,7 @@ class _HomePageState extends State<HomePage> {
       child: GestureDetector(
         onTap: onTap,
         child: GlassPanel(
+          tint: surfaceDim,
           padding: const EdgeInsets.all(16),
           borderRadius: BorderRadius.circular(16),
           blur: 12,
@@ -1426,6 +1395,7 @@ class _HomePageState extends State<HomePage> {
 
   Widget _buildContactForm() {
     return GlassPanel(
+      tint: surfaceDim,
       padding: const EdgeInsets.all(32),
       borderRadius: BorderRadius.circular(24),
       child: Form(

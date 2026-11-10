@@ -33,11 +33,10 @@ class _CommunityHeroSectionState extends State<CommunityHeroSection>
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.sizeOf(context).width;
-    final isMobile = screenWidth < 600;
+    MediaQuery.sizeOf(context).width;
 
     return ConstrainedBox(
-      constraints: const BoxConstraints(maxWidth: 1240),
+      constraints: BoxConstraints(maxWidth: 1240),
       child: LayoutBuilder(builder: (context, c) => _buildContent(c.maxWidth)),
     );
   }
@@ -52,39 +51,35 @@ class _CommunityHeroSectionState extends State<CommunityHeroSection>
         SizedBox(height: isMobile ? 36 : 56),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: isMobile ? 20 : 24),
-          child: ConstrainedBox(
-            constraints: const BoxConstraints(maxWidth: 720),
-            child: Column(
-              children: [
-                Text(
-                  "Every tail has a story.\nEvery pet finds a family.",
-                  textAlign: TextAlign.center,
-                  style: GoogleFonts.plusJakartaSans(
-                    fontSize: titleSize,
-                    fontWeight: FontWeight.w800,
-                    height: 1.1,
-                    letterSpacing: titleSize * -0.035,
-                    color: heroInk,
-                  ),
+          child: Column(
+            children: [
+              const SizedBox(height: 50),
+              Text(
+                "Making pet parenting easier\nmaking tails happier.",
+                //"Every tail has a story.\nEvery paw deserves happiness.",
+                textAlign: TextAlign.center,
+                style: GoogleFonts.plusJakartaSans(
+                  fontSize: titleSize,
+                  fontWeight: FontWeight.w800,
+                  height: 1.1,
+                  letterSpacing: titleSize * -0.035,
+                  color: heroInk,
                 ),
-                const SizedBox(height: 20),
-                ConstrainedBox(
-                  constraints: const BoxConstraints(maxWidth: 540),
-                  child: Text(
-                    'Find pet companions, adopt pets and track medical record and more',
-                    textAlign: TextAlign.center,
-                    style: GoogleFonts.plusJakartaSans(
-                      fontSize: isMobile ? 15 : 17,
-                      height: 1.65,
-                      color: const Color(0xFF525252),
-                    ),
-                  ),
+              ),
+              const SizedBox(height: 20),
+              Text(
+                'Find pet companions, adopt pets and track medical record and more',
+                textAlign: TextAlign.center,
+                style: GoogleFonts.plusJakartaSans(
+                  fontSize: isMobile ? 15 : 17,
+                  height: 1.65,
+                  color: const Color(0xFF525252),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
-        SizedBox(height: isMobile ? 36 : 44),
+        SizedBox(height: isMobile ? 36 : 100),
         _phoneAndPhotoTray(width),
       ],
     );

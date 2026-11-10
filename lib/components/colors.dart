@@ -19,7 +19,7 @@ const Color surfaceContainerLow = Color(0xFFFFF1ED);
 //Color(0xFFFFE9E4);
 const Color surfaceContainerHigh = Color(0xFFF9E4DE);
 const Color surfaceContainerHighest = Color(0xFFF3DED9);
-const Color surfaceDim = Color.fromARGB(255, 255, 255, 255);
+const Color surfaceDim = Color.fromARGB(255, 255, 226, 226);
 
 // Text & Outline
 const Color onSurface = Color(0xFF241916); // Deep charcoal

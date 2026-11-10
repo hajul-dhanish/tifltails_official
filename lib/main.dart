@@ -224,74 +224,78 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
+          if (!isMobile) ...[
+            SizedBox(width: 16),
+            Container(
+              color: black.withValues(alpha: 0.6),
+              height: 20,
+              width: 1,
+            ),
 
-          SizedBox(width: 16),
-          Container(color: black.withValues(alpha: 0.6), height: 20, width: 1),
-
-          // const Spacer(),
-          // Desktop Navigation Links
-          Row(
-            children: [
-              if (!isMobile) ...[
-                _navLink('About', () => _scrollTo(_aboutKey)),
-                _navLink('App Features', () => _scrollTo(_featuresKey)),
-                _navLink('Services', () => _scrollTo(_featuresKey)),
-                _navLink('Shop', () => _scrollTo(_shopKey)),
-                _navLink('Contact', () => _scrollTo(_contactKey)),
-                const SizedBox(width: 12),
+            // const Spacer(),
+            // Desktop Navigation Links
+            Row(
+              children: [
+                if (!isMobile) ...[
+                  _navLink('About', () => _scrollTo(_aboutKey)),
+                  _navLink('App Features', () => _scrollTo(_featuresKey)),
+                  _navLink('Services', () => _scrollTo(_featuresKey)),
+                  _navLink('Shop', () => _scrollTo(_shopKey)),
+                  _navLink('Contact', () => _scrollTo(_contactKey)),
+                  const SizedBox(width: 12),
+                ],
               ],
-            ],
-          ),
-          Spacer(),
-          // Download CTA Button
-          MouseRegion(
-            cursor: SystemMouseCursors.click,
-            child: GestureDetector(
-              onTap: () => _scrollTo(_downloadKey),
-              child: Container(
-                padding: EdgeInsets.symmetric(
-                  horizontal: isMobile ? 14 : 18,
-                  vertical: 9,
-                ),
-                decoration: BoxDecoration(
-                  color: primary,
-                  borderRadius: BorderRadius.circular(24),
-                  boxShadow: const [
-                    BoxShadow(
-                      color: Color(0x209F3B24),
-                      offset: Offset(0, 3),
-                      blurRadius: 8,
-                    ),
-                  ],
-                ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    const Icon(
-                      Icons.download_rounded,
-                      size: 16,
-                      color: Colors.white,
-                    ),
-                    const SizedBox(width: 6),
-                    Text(
-                      'Download App',
-                      style: GoogleFonts.plusJakartaSans(
-                        fontSize: 13,
-                        fontWeight: FontWeight.w600,
+            ),
+            Spacer(),
+            // Download CTA Button
+            MouseRegion(
+              cursor: SystemMouseCursors.click,
+              child: GestureDetector(
+                onTap: () => _scrollTo(_downloadKey),
+                child: Container(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: isMobile ? 14 : 18,
+                    vertical: 9,
+                  ),
+                  decoration: BoxDecoration(
+                    color: primary,
+                    borderRadius: BorderRadius.circular(24),
+                    boxShadow: const [
+                      BoxShadow(
+                        color: Color(0x209F3B24),
+                        offset: Offset(0, 3),
+                        blurRadius: 8,
+                      ),
+                    ],
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      const Icon(
+                        Icons.download_rounded,
+                        size: 16,
                         color: Colors.white,
                       ),
-                    ),
-                  ],
+                      const SizedBox(width: 6),
+                      Text(
+                        'Download App',
+                        style: GoogleFonts.plusJakartaSans(
+                          fontSize: 13,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
-          ),
-
+          ],
           // Mobile Menu Popup
           if (isMobile) ...[
             const SizedBox(width: 8),
             PopupMenuButton<String>(
-              icon: const Icon(Icons.menu, color: white),
+              icon: const Icon(Icons.menu, color: black),
               color: surfaceContainerLowest,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(16),
@@ -462,7 +466,7 @@ class _HomePageState extends State<HomePage> {
                     children: [
                       SizedBox(
                         width: cardWidth,
-                        height: 400,
+                        height: isMobile ? null : 400,
                         child: _featureCard(
                           pillar: 'PILLAR 01',
                           title: 'Pet Adoption',
@@ -477,7 +481,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                       SizedBox(
                         width: cardWidth,
-                        height: 400,
+                        height: isMobile ? null : 400,
 
                         child: _featureCard(
                           pillar: 'PILLAR 02',
@@ -497,7 +501,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                       SizedBox(
                         width: cardWidth,
-                        height: 400,
+                        height: isMobile ? null : 400,
 
                         child: _featureCard(
                           pillar: 'PILLAR 03',
@@ -517,7 +521,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                       SizedBox(
                         width: cardWidth,
-                        height: 400,
+                        height: isMobile ? null : 400,
 
                         child: _roadmapCard(),
                       ),
@@ -1660,7 +1664,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                       const SizedBox(width: 8),
                       Text(
-                        'Send Enquiry to contact@tifltails.com',
+                        'Send Enquiry',
                         style: GoogleFonts.plusJakartaSans(
                           fontSize: 14,
                           fontWeight: FontWeight.w700,

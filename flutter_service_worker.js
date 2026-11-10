@@ -9,7 +9,7 @@ const RESOURCES = {"assets/assets/fonts/roboto_regular.ttf": "11eabca2251325cfc5
 "assets/assets/fonts/product_sans_italic.ttf": "e88ec18827526928e71407a24937825a",
 "assets/assets/fonts/product_sans_bold.ttf": "dba0c688b8d5ee09a1e214aebd5d25e4",
 "assets/assets/fonts/roboto_bold.ttf": "e07df86cef2e721115583d61d1fb68a6",
-"assets/assets/images/logo.png": "cc81e4fd582b27aa5a06d5ab58205783",
+"assets/assets/images/logo.png": "c0f25dbd0bad28abecb312d220edbb0b",
 "assets/assets/images/hero/testimonial.jpg": "006d05754d21088d510831c6365db5af",
 "assets/assets/images/hero/dogs_playing.jpg": "61e67518e1af61ad6a9d8d417a953787",
 "assets/assets/images/hero/cat.jpg": "085e0cf2a3c615e6a641fb7865bc7f58",
@@ -20,7 +20,7 @@ const RESOURCES = {"assets/assets/fonts/roboto_regular.ttf": "11eabca2251325cfc5
 "assets/assets/docs/priivacy_policy.md": "eaaf2ddafbc5ac7c88ba17b817f18480",
 "assets/assets/docs/PRIVACY_POLICY.md": "eaaf2ddafbc5ac7c88ba17b817f18480",
 "assets/NOTICES": "a03ad02e1024dcf1f35ab898fe133875",
-"assets/fonts/MaterialIcons-Regular.otf": "117f98a344cc8500f9dbf1bf15d9874f",
+"assets/fonts/MaterialIcons-Regular.otf": "f0b70b6d6f49e4db3f5cb1ba2b8b4895",
 "assets/AssetManifest.json": "c5fbeb475826bc1af5b22fb47f81876a",
 "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "33b7d9392238c04c131b6ce224e13711",
 "assets/FontManifest.json": "277df259a6b4de0c68481e262c8a9b95",
@@ -46,12 +46,12 @@ const RESOURCES = {"assets/assets/fonts/roboto_regular.ttf": "11eabca2251325cfc5
 "icons/Icon-maskable-512.png": "793c01cacf76aacaf8ebd044e29b3ebe",
 "favicon.png": "59eefc59a8eb97c4bbc6794df2953a19",
 "manifest.json": "6d6abc8e03b3c84a7064b14b61141355",
-"main.dart.js": "b70d605ae8a86083d4b194bde1023611",
+"main.dart.js": "b93c0bd78778e20ceccac5e2d69d22b2",
 "index.html": "40e5ff06bb61842777d92d6b185d4759",
 "/": "40e5ff06bb61842777d92d6b185d4759",
 "version.json": "44d260bcc5f00c55fd8e9f2a6f69d199",
 "landing.html": "891765c4275f4f87cb272a138d0a7f3e",
-"flutter_bootstrap.js": "c5e3c648bb7cfbeb5677bd9e3622f400",
+"flutter_bootstrap.js": "c5635f97a0a3bbeb786f5eb790648389",
 "404.html": "d6539691bbc633ed1d1482e1b35b46a6"};
 // The application shell files that are downloaded before a service worker can
 // start.

@@ -75,7 +75,7 @@ class Features extends StatelessWidget {
                   ),
                 ),
                 const Text(
-                  "Say goodbye to endless searching. TiflTails combines all essential pet resources—products, services, articles, and community—into one streamlined, simple-to-navigate platform.",
+                  "Say goodbye to endless searching. TIFL TAILS combines all essential pet resources—products, services, articles, and community—into one streamlined, simple-to-navigate platform.",
                   style: bodyTextStyle,
                   textAlign: TextAlign.center,
                 ),

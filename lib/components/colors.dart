@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-// Brand & Theme Colors from TiflTails Redesign & PRD
+// Brand & Theme Colors from TIFL TAILS Redesign & PRD
 const Color primary = Color.fromARGB(255, 230, 98, 50);
 //Color(0xFFE67850); // Warm Terracotta / Coral
 const Color primaryContainer = Color(0xFF414a4c);

@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'TiflTails - Your One-Stop Pet Platform',
+      title: 'TIFL TAILS - Your One-Stop Pet Platform',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         useMaterial3: true,
@@ -862,7 +862,7 @@ class _HomePageState extends State<HomePage> {
           const Icon(Icons.pets, size: 54, color: primary),
           const SizedBox(height: 12),
           Text(
-            'TiflTails Dog Treats',
+            'TIFL TAILS Dog Treats',
             style: GoogleFonts.plusJakartaSans(
               fontSize: 18,
               fontWeight: FontWeight.w800,
@@ -944,7 +944,7 @@ class _HomePageState extends State<HomePage> {
         ),
         const SizedBox(height: 12),
         Text(
-          'TiflTails Dog Treats',
+          'TIFL TAILS Dog Treats',
           style: GoogleFonts.plusJakartaSans(
             fontSize: 32,
             fontWeight: FontWeight.w800,
@@ -1070,7 +1070,7 @@ class _HomePageState extends State<HomePage> {
               cursor: SystemMouseCursors.click,
               child: GestureDetector(
                 onTap: () => _onCategorySelected(
-                  'Product Purchase (TiflTails Dog Treats 100g)',
+                  'Product Purchase (TIFL TAILS Dog Treats 100g)',
                 ),
                 child: Container(
                   padding: const EdgeInsets.symmetric(
@@ -1226,7 +1226,7 @@ class _HomePageState extends State<HomePage> {
         ),
         const SizedBox(height: 8),
         Text(
-          'Get In Touch With TiflTails',
+          'Get In Touch With TIFL TAILS',
           style: GoogleFonts.plusJakartaSans(
             fontSize: 32,
             fontWeight: FontWeight.w800,
@@ -1252,9 +1252,9 @@ class _HomePageState extends State<HomePage> {
           iconBg: primaryFixed,
           iconColor: primary,
           title: 'Email Us Directly',
-          mainText: 'contact@tifltails.com',
+          mainText: 'support@tifltails.com',
           subtitle: 'Direct inbox response within 2 hours',
-          onTap: () => openUrl('mailto:contact@tifltails.com'),
+          onTap: () => openUrl('mailto:support@tifltails.com'),
         ),
         const SizedBox(height: 12),
 
@@ -1264,9 +1264,9 @@ class _HomePageState extends State<HomePage> {
           iconBg: secondaryFixed,
           iconColor: secondary,
           title: 'Call or WhatsApp',
-          mainText: '+91 9600000000',
+          mainText: '+91 8825685787',
           subtitle: 'Mon - Sat, 9:00 AM - 8:00 PM IST',
-          onTap: () => openUrl('tel:+919600000000'),
+          onTap: () => openUrl('tel:+918825685787'),
         ),
         const SizedBox(height: 12),
 
@@ -1425,7 +1425,7 @@ class _HomePageState extends State<HomePage> {
                 children: const [
                   TextSpan(text: 'Enquiries are dispatched directly to '),
                   TextSpan(
-                    text: 'contact@tifltails.com',
+                    text: 'support@tifltails.com',
                     style: TextStyle(
                       color: primary,
                       fontWeight: FontWeight.bold,
@@ -1467,7 +1467,7 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ),
                           Text(
-                            'A notification has been directed to contact@tifltails.com. Our coordinator will reply shortly.',
+                            'A notification has been directed to support@tifltails.com. Our coordinator will reply shortly.',
                             style: GoogleFonts.plusJakartaSans(
                               fontSize: 12,
                               fontWeight: FontWeight.w500,
@@ -1511,7 +1511,7 @@ class _HomePageState extends State<HomePage> {
                 Expanded(
                   child: _formField(
                     label: 'Mobile Number',
-                    hint: '+91 96000 00000',
+                    hint: '+91 8825685787',
                     controller: _phoneController,
                   ),
                 ),
@@ -1561,7 +1561,7 @@ class _HomePageState extends State<HomePage> {
                               ),
                               DropdownMenuItem(
                                 value:
-                                    'Product Purchase (TiflTails Dog Treats 100g)',
+                                    'Product Purchase (TIFL TAILS Dog Treats 100g)',
                                 child: Text(
                                   'Product Purchase (Dog Treats 100g)',
                                 ),
@@ -1633,13 +1633,13 @@ class _HomePageState extends State<HomePage> {
 
                   // Open email client with form contents as fallback
                   final subject = Uri.encodeComponent(
-                    'TiflTails Enquiry: $_selectedCategory ($name)',
+                    'TIFL TAILS Enquiry: $_selectedCategory ($name)',
                   );
                   final body = Uri.encodeComponent(
                     'Name: $name\nEmail: $email\nPhone: $phone\nCategory: $_selectedCategory\n\nMessage:\n$message',
                   );
                   openUrl(
-                    'mailto:contact@tifltails.com?subject=$subject&body=$body',
+                    'mailto:support@tifltails.com?subject=$subject&body=$body',
                   );
 
                   setState(() {
@@ -1733,18 +1733,18 @@ class _HomePageState extends State<HomePage> {
       {
         'q': 'What are the requirements for adopting a rescue companion?',
         'a':
-            'Adoptions on TiflTails require filling out a friendly lifestyle questionnaire, coordinating a digital or in-person home check with the verified shelter, and signing a no-abandonment agreement. Rescues are dewormed and neutered/spayed according to age guidelines prior to handoff.',
+            'Adoptions on TIFL TAILS require filling out a friendly lifestyle questionnaire, coordinating a digital or in-person home check with the verified shelter, and signing a no-abandonment agreement. Rescues are dewormed and neutered/spayed according to age guidelines prior to handoff.',
       },
       {
-        'q': 'How does TiflTails guarantee 100% NGO donation transparency?',
+        'q': 'How does TIFL TAILS guarantee 100% NGO donation transparency?',
         'a':
             'We operate zero platform commissions on charitable drives. All funds raised are credited directly to verified 80G/12A compliant animal trusts. Every emergency food drive and medical treatment publishes photographic invoices and doctor prescription receipts right in your donor feed.',
       },
       {
         'q':
-            'What is the delivery time and storage policy for TiflTails Dog Treats?',
+            'What is the delivery time and storage policy for TIFL TAILS Dog Treats?',
         'a':
-            'All orders for TiflTails Dog Treats (100g) are dispatched within 24–48 business hours with temperature-sealed packaging and express tracking. Once received and opened, please refrigerate immediately to ensure fresh single-ingredient goodness for up to one full month.',
+            'All orders for TIFL TAILS Dog Treats (100g) are dispatched within 24–48 business hours with temperature-sealed packaging and express tracking. Once received and opened, please refrigerate immediately to ensure fresh single-ingredient goodness for up to one full month.',
       },
     ];
 
@@ -1908,7 +1908,7 @@ class _HomePageState extends State<HomePage> {
         ),
         const SizedBox(height: 6),
         Text(
-          'Download TiflTails on Android & iOS Today',
+          'Download TIFL TAILS on Android & iOS Today',
           textAlign: isMobile ? TextAlign.center : TextAlign.left,
           style: GoogleFonts.plusJakartaSans(
             fontSize: isMobile ? 24 : 32,
@@ -2089,7 +2089,7 @@ class _HomePageState extends State<HomePage> {
                   const SizedBox(width: 6),
                   Expanded(
                     child: Text(
-                      '© 2026 TiflTails Platform (tifltails.com). Built with love for pets and their humans.',
+                      '© 2026 TIFL TAILS Platform (tifltails.com). Built with love for pets and their humans.',
                       style: GoogleFonts.plusJakartaSans(
                         fontSize: 12,
                         fontWeight: FontWeight.w500,
@@ -2158,7 +2158,7 @@ class _HomePageState extends State<HomePage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'TiflTails',
+                  'TIFL TAILS',
                   style: GoogleFonts.plusJakartaSans(
                     fontSize: 18,
                     fontWeight: FontWeight.w700,
@@ -2284,13 +2284,13 @@ class _HomePageState extends State<HomePage> {
         const SizedBox(height: 12),
         _footerContactItem(
           Icons.call_rounded,
-          '+91 9600000000',
-          () => openUrl('tel:+919600000000'),
+          '+91 8825685787',
+          () => openUrl('tel:+918825685787'),
         ),
         _footerContactItem(
           Icons.mail_rounded,
-          'contact@tifltails.com',
-          () => openUrl('mailto:contact@tifltails.com'),
+          'support@tifltails.com',
+          () => openUrl('mailto:support@tifltails.com'),
         ),
         _footerContactItem(
           Icons.support_rounded,

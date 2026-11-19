@@ -250,7 +250,7 @@ class _PrivacyPolicyPageState extends State<PrivacyPolicyPage> {
                         ),
                         const SizedBox(height: 6),
                         Text(
-                          "TiflTails official data protection, privacy guidelines & user rights",
+                          "TIFL TAILS official data protection, privacy guidelines & user rights",
                           style: GoogleFonts.inter(
                             fontSize: isMobile ? 14 : 16,
                             color: Colors.white.withValues(alpha: 0.8),

@@ -211,7 +211,7 @@ class _CommunityHeroSectionState extends State<CommunityHeroSection>
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(
-            'Download TiflTails App',
+            'Download TIFL TAILS App',
             style: GoogleFonts.plusJakartaSans(
               fontSize: isMobile ? 15 : 16,
               fontWeight: FontWeight.w800,

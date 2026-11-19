@@ -2,7 +2,7 @@ import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
 
-/// TiflTails "liquid glass" design language — shared by every section so the
+/// TIFL TAILS "liquid glass" design language — shared by every section so the
 /// whole site matches the coral glass header.
 ///
 /// * [GlassBackdrop]  – warm ambient colour field the glass refracts.
